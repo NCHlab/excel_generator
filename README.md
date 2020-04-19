@@ -12,10 +12,10 @@ This tool allows for quick generation of basic excel sheet formatted into a tabl
 The CLI version allows for the program to be executed via a Terminal.
 
 ```bash
-python excel_generator.py -f "Houses" -p "PATH\Where\To\Save" -th "Table, Header, names, seperated, by, a, comma" -ac Accent2
+python excel_gen_cli.py -f "Houses" -p "PATH\Where\To\Save" -th "Table, Header, names, seperated, by, a, comma" -ac Accent2
 
 # TO gen a formatted file quickly
-python excel_generator.py -qc True
+python excel_gen_cli.py -qc True
 ```
 
 | Argument        | Alias | Help                                                                 | Default Value             |
@@ -35,10 +35,10 @@ python excel_generator.py -qc True
 
 ```bash
 # Normal Usage
-python excel_generator.py -f Cars -s Cars_to_buy_v1 -p "/home/ncy/projects/cars_proj/" -th "Make, Model, Year, Price, Fuel Type, Colour" -ac Accent2
+python excel_gen_cli.py -f Cars -s Cars_to_buy_v1 -p "/home/ncy/projects/cars_proj/" -th "Make, Model, Year, Price, Fuel Type, Colour" -ac Accent2
 
 # Simple use . to use current directory
-python excel_generator.py -f Cars -s Cars_to_buy_v1 -p "." -th "Make, Model, Year, Price, Fuel Type, Colour" -ac Accent2
+python excel_gen_cli.py -f Cars -s Cars_to_buy_v1 -p "." -th "Make, Model, Year, Price, Fuel Type, Colour" -ac Accent2
 ```
 
 ![Image](./images/create_ex1.png)
@@ -46,7 +46,7 @@ python excel_generator.py -f Cars -s Cars_to_buy_v1 -p "." -th "Make, Model, Yea
 
 ```bash
 # Quick Create
-python excel_generator.py -qc True
+python excel_gen_cli.py -qc True
 ```
 
 ![Image](./images/quick_create_ex2.png)

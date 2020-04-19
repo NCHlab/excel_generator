@@ -1,0 +1,6 @@
+excelfile.xlsx
+Reference_document.xlsx
+ui_excel.ui
+*.URL
+src/excel_generator/constant.py
+src/excel_generator/__pycache__

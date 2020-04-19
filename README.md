@@ -13,6 +13,9 @@ The CLI version allows for the program to be executed via a Terminal.
 
 ```bash
 python excel_generator.py -f "Houses" -p "PATH\Where\To\Save" -th "Table, Header, names, seperated, by, a, comma" -ac Accent2
+
+# TO gen a formatted file quickly
+python excel_generator.py -qc True
 ```
 
 | Argument        | Alias | Help                                                                 | Default Value             |
@@ -26,3 +29,24 @@ python excel_generator.py -f "Houses" -p "PATH\Where\To\Save" -th "Table, Header
 | --accent_type   | -ac   | Accent Types  (Accent1 - 5 exist)                                    | Accent1                   |
 | --quick_create  | -qc   | Allows for quick generation of file (uses most defaults)             | False                     |
 | --force_columns | -fc   | Enables for more cols to be created than table header names provided | False                     |
+
+
+## Examples
+
+```bash
+# Normal Usage
+python excel_generator.py -f Cars -s Cars_to_buy_v1 -p "/home/ncy/projects/cars_proj/" -th "Make, Model, Year, Price, Fuel Type, Colour" -ac Accent2
+
+# Simple use . to use current directory
+python excel_generator.py -f Cars -s Cars_to_buy_v1 -p "." -th "Make, Model, Year, Price, Fuel Type, Colour" -ac Accent2
+```
+
+![Image](./images/create.png)
+
+
+```bash
+# Quick Create
+python excel_generator.py -qc True
+```
+
+![Image](./images/quick_create.png)

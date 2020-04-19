@@ -31,7 +31,7 @@ def get_headers(columns):
 
 def modify_sheet_title(wb, sheetname):
     ws = wb["Sheet"]
-    ws.title = sheetname+"444"
+    ws.title = sheetname
 
     return ws
 

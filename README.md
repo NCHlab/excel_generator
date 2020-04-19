@@ -41,7 +41,7 @@ python excel_generator.py -f Cars -s Cars_to_buy_v1 -p "/home/ncy/projects/cars_
 python excel_generator.py -f Cars -s Cars_to_buy_v1 -p "." -th "Make, Model, Year, Price, Fuel Type, Colour" -ac Accent2
 ```
 
-![Image](./images/create.png)
+![Image](./images/create_ex1.png)
 
 
 ```bash
@@ -49,4 +49,4 @@ python excel_generator.py -f Cars -s Cars_to_buy_v1 -p "." -th "Make, Model, Yea
 python excel_generator.py -qc True
 ```
 
-![Image](./images/quick_create.png)
+![Image](./images/quick_create_ex2.png)

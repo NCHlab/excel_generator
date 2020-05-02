@@ -16,12 +16,13 @@ def get_headers(columns):
     elif columns > len(alphabet):
         excel_cols += alphabet
 
-        for j in range(len(alphabet)):
-            for k in range(len(alphabet)):
+        # AA, AB, AC..ZZ
+        for letter in range(len(alphabet)):
+            for second_letter in range(len(alphabet)):
                 if len(excel_cols) >= columns:
                     return str(excel_cols[0]),str(excel_cols[-1])
 
-                excel_cols.append(alphabet[j]+alphabet[k])
+                excel_cols.append(alphabet[letter]+alphabet[second_letter])
 
     return str(excel_cols[0]),str(excel_cols[-1])
 
@@ -37,7 +38,10 @@ def get_columns(table_header, columns, force_columns, quick_create):
     if force_columns or quick_create:
         cols = columns
     else:
-        cols = len(table_header) or columns
+        try:
+            cols = len(table_header)
+        except TypeError:
+            cols = columns
     return cols
 
 

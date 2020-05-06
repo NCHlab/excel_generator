@@ -1,10 +1,18 @@
 # Excel Generator
 
-This is a quick excel generator, GUI created using PySide2 GUI library.
+This is a quick excel generator CLI/GUI Tool, with the GUI created using PySide2 GUI library.
 
 This tool allows for quick generation of basic excel sheet formatted into a table.
 
 (The primary object of this project is to learn how to use QT5 / PySide2 Library to create a GUI interface)
+
+## GUI
+
+To Create py file from the QT Designer ui file:
+
+```bash
+pyside2-uic gui_menu.ui -o main.py
+```
 
 ## CLI Tool
 

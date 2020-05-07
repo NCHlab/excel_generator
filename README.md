@@ -10,12 +10,12 @@ This tool allows for quick generation of basic excel sheet formatted into a tabl
 
 Fill out the fields and hit create to generate an excel sheet. If you fill out the `Headers` field, you do not need to set the number of columns, however you can override this by ticking the checkbox.
 
-<img src="./images/gui_ex2.png" alt="Image Of Quick Create" width="280" height="250">
-<img src="./images/gui_ex3.png" alt="Image Of Quick Create" width="280" height="250">
+<img src="./images/gui_ex1.png" alt="Image Of Window with filled out information" width="280" height="250">
+<img src="./images/gui_ex2.png" alt="Image Of Created info box" width="280" height="250">
 
 The GUI version allows a quick way to create an excel file using the `quick create` button. The location of the file is set to where the program is located unless the filepath is provided.
 
-<img src="./images/gui_ex4.png" alt="Image Of Quick Create" width="300" height="260">
+<img src="./images/gui_ex3.png" alt="Image Of Quick Create" width="300" height="260">
 
 To Create py file from the QT Designer ui file:
 

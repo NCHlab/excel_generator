@@ -262,7 +262,9 @@ class Ui_MainWindow(object):
         self.actionExit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
         self.actionExit_2.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
         self.sheetname_LBL.setText(QCoreApplication.translate("MainWindow", u"Sheet Name", None))
+        self.sheetname_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Sheet1", None))
         self.filepath_LBL.setText(QCoreApplication.translate("MainWindow", u"File Path", None))
+        self.filepath_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"select filepath....", None))
         self.filepath_TB.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.cols_LBL.setText(QCoreApplication.translate("MainWindow", u"Columns", None))
         self.cols_CB.setItemText(0, QCoreApplication.translate("MainWindow", u"1", None))
@@ -278,6 +280,7 @@ class Ui_MainWindow(object):
 
         self.checkBox.setText(QCoreApplication.translate("MainWindow", u"Force Column", None))
         self.filename_LBL.setText(QCoreApplication.translate("MainWindow", u"File Name", None))
+        self.filename_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"enter filename....", None))
         self.rows_LBL.setText(QCoreApplication.translate("MainWindow", u"Rows", None))
         self.rows_CB.setItemText(0, QCoreApplication.translate("MainWindow", u"1", None))
         self.rows_CB.setItemText(1, QCoreApplication.translate("MainWindow", u"2", None))
@@ -302,6 +305,7 @@ class Ui_MainWindow(object):
         self.quickcreate_PB.setText(QCoreApplication.translate("MainWindow", u"Quick Create", None))
         self.cancel_PB.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
         self.headers_LBL.setText(QCoreApplication.translate("MainWindow", u"Headers", None))
+        self.headers_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"header1, header2, header3, header4....", None))
         self.menuFile.setTitle(QCoreApplication.translate("MainWindow", u"File", None))
     # retranslateUi
 

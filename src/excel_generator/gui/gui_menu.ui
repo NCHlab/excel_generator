@@ -53,6 +53,9 @@
              <height>0</height>
             </size>
            </property>
+           <property name="placeholderText">
+            <string>Sheet1</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -79,6 +82,9 @@
              <width>200</width>
              <height>0</height>
             </size>
+           </property>
+           <property name="placeholderText">
+            <string>select filepath....</string>
            </property>
           </widget>
          </item>
@@ -203,6 +209,9 @@
              <width>200</width>
              <height>0</height>
             </size>
+           </property>
+           <property name="placeholderText">
+            <string>enter filename....</string>
            </property>
           </widget>
          </item>
@@ -458,6 +467,9 @@
              <width>200</width>
              <height>0</height>
             </size>
+           </property>
+           <property name="placeholderText">
+            <string>header1, header2, header3, header4....</string>
            </property>
           </widget>
          </item>

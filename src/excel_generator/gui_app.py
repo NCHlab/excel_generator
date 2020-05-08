@@ -1,6 +1,7 @@
 import os
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
+import webbrowser
 
 from datetime import datetime
 
@@ -13,19 +14,34 @@ class MyQtApplication(main.Ui_MainWindow, QtWidgets.QMainWindow):
         super(MyQtApplication, self).__init__()
         self.setupUi(self)
         self.setup_icon()
-        self.setWindowTitle("Excel Generator - v1.0")
+        self.setWindowTitle("Excel Generator - v1.1")
         self.populate_cols()
         self.populate_rows()
         self.filename_form()
-        self.create_PB.clicked.connect(self.create_excel)
+
+        # Buttons
         self.filepath_TB.clicked.connect(self.filepath_selector)
+        self.create_PB.clicked.connect(self.create_excel)
         self.quickcreate_PB.clicked.connect(self.quick_create_excel)
         self.cancel_PB.clicked.connect(lambda x: sys.exit(0))
+
+        # File Menu
+        self.create_ACTION.triggered.connect(self.create_excel)
+        self.quickcreate_ACTION.triggered.connect(self.quick_create_excel)
+        self.exit_ACTION.triggered.connect(lambda x: sys.exit(0))
+
+        self.clearfields_ACTION.triggered.connect(self.clear_fields)
 
     def setup_icon(self):
         app_icon = QtGui.QIcon()
         app_icon.addFile("gui/xcel_gen.png", QtCore.QSize(256, 256))
         app.setWindowIcon(app_icon)
+
+    def clear_fields(self):
+        self.filename_LE.clear()
+        self.filepath_LE.clear()
+        self.sheetname_LE.clear()
+        self.headers_LE.clear()
 
     def populate_cols(self):
         self.cols_CB.clear()
@@ -119,9 +135,14 @@ class MyQtApplication(main.Ui_MainWindow, QtWidgets.QMainWindow):
             quick_create=False,
         )
 
-        QtWidgets.QMessageBox.information(
-            self, "Created", f"Excel File Created: {filename}.xlsx",
+        openfilepath = QtWidgets.QMessageBox.question(
+            self,
+            "Created",
+            f"Excel File Created: {filename}.xlsx\nLocation: {filepath}\n\nOpen location of file?",
         )
+
+        if openfilepath == (QtWidgets.QMessageBox.Yes):
+            webbrowser.open("file:///" + filepath)
 
     def quick_create_excel(self):
 
@@ -134,17 +155,25 @@ class MyQtApplication(main.Ui_MainWindow, QtWidgets.QMainWindow):
 
         filename = f"Excel_Sheet_{current_time}"
 
+        accept_type = self.accent_form()
+
         generate_xlsx(
             table_header="",
             filename=filename,
             filepath=filepath,
+            accent_type=accept_type,
             force_columns=True,
             quick_create=True,
         )
 
-        QtWidgets.QMessageBox.information(
-            self, "Created", f"Excel File Created: {filename}.xlsx",
+        openfilepath = QtWidgets.QMessageBox.question(
+            self,
+            "Created",
+            f"Excel File Created: {filename}.xlsx\nLocation: {filepath}\n\nOpen location of file?",
         )
+
+        if openfilepath == (QtWidgets.QMessageBox.Yes):
+            webbrowser.open("file:///" + filepath)
 
 
 if __name__ == "__main__":

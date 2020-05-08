@@ -71,3 +71,15 @@ python excel_gen_cli.py -qc True
 ```
 
 ![Image](./images/quick_create_ex2.png)
+
+# Building The Program
+
+This project uses `auto-py-to-exe` to create an executable file which can be found in the release section.
+
+How ever to build from source code, you can use pythons build function (This way means that the file is larger ~300MB instead of ~80MB).
+
+git clone this repo, ensure `cx_Freeze` is installed and run:
+
+```bash
+python setup.py build
+```

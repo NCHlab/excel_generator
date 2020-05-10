@@ -33,6 +33,10 @@ class Ui_MainWindow(object):
         self.create_ACTION = QAction(MainWindow)
         self.create_ACTION.setObjectName(u"create_ACTION")
         self.create_ACTION.setShortcutVisibleInContextMenu(False)
+        self.about_ACTION = QAction(MainWindow)
+        self.about_ACTION.setObjectName(u"about_ACTION")
+        self.checkupdates_ACTION = QAction(MainWindow)
+        self.checkupdates_ACTION.setObjectName(u"checkupdates_ACTION")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout_2 = QGridLayout(self.centralwidget)
@@ -248,6 +252,8 @@ class Ui_MainWindow(object):
         self.menuFile.setObjectName(u"menuFile")
         self.menuEdit = QMenu(self.menubar)
         self.menuEdit.setObjectName(u"menuEdit")
+        self.menuHelp = QMenu(self.menubar)
+        self.menuHelp.setObjectName(u"menuHelp")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -255,11 +261,14 @@ class Ui_MainWindow(object):
 
         self.menubar.addAction(self.menuFile.menuAction())
         self.menubar.addAction(self.menuEdit.menuAction())
+        self.menubar.addAction(self.menuHelp.menuAction())
         self.menuFile.addAction(self.create_ACTION)
         self.menuFile.addAction(self.quickcreate_ACTION)
         self.menuFile.addSeparator()
         self.menuFile.addAction(self.exit_ACTION)
         self.menuEdit.addAction(self.clearfields_ACTION)
+        self.menuHelp.addAction(self.about_ACTION)
+        self.menuHelp.addAction(self.checkupdates_ACTION)
 
         self.retranslateUi(MainWindow)
 
@@ -273,6 +282,8 @@ class Ui_MainWindow(object):
         self.exit_ACTION.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
         self.clearfields_ACTION.setText(QCoreApplication.translate("MainWindow", u"Clear Fields", None))
         self.create_ACTION.setText(QCoreApplication.translate("MainWindow", u"Create", None))
+        self.about_ACTION.setText(QCoreApplication.translate("MainWindow", u"About", None))
+        self.checkupdates_ACTION.setText(QCoreApplication.translate("MainWindow", u"Check Updates", None))
         self.sheetname_LBL.setText(QCoreApplication.translate("MainWindow", u"Sheet Name", None))
         self.sheetname_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Sheet1", None))
         self.filepath_LBL.setText(QCoreApplication.translate("MainWindow", u"File Path", None))
@@ -320,5 +331,6 @@ class Ui_MainWindow(object):
         self.headers_LE.setPlaceholderText(QCoreApplication.translate("MainWindow", u"header1, header2, header3, header4....", None))
         self.menuFile.setTitle(QCoreApplication.translate("MainWindow", u"File", None))
         self.menuEdit.setTitle(QCoreApplication.translate("MainWindow", u"Edit", None))
+        self.menuHelp.setTitle(QCoreApplication.translate("MainWindow", u"Help", None))
     # retranslateUi
 

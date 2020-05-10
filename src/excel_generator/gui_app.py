@@ -1,6 +1,8 @@
 import os
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
+from packaging import version
+import requests
 import webbrowser
 
 from datetime import datetime
@@ -8,13 +10,15 @@ from datetime import datetime
 from gui import main
 from excel_generator import generate_xlsx
 
+CURRENT_VERSION = "1.2"
+
 
 class MyQtApplication(main.Ui_MainWindow, QtWidgets.QMainWindow):
     def __init__(self):
         super(MyQtApplication, self).__init__()
         self.setupUi(self)
         self.setup_icon()
-        self.setWindowTitle("Excel Generator - v1.1")
+        self.setWindowTitle("Excel Generator - v1.2")
         self.populate_cols()
         self.populate_rows()
         self.filename_form()
@@ -31,6 +35,43 @@ class MyQtApplication(main.Ui_MainWindow, QtWidgets.QMainWindow):
         self.exit_ACTION.triggered.connect(lambda x: sys.exit(0))
 
         self.clearfields_ACTION.triggered.connect(self.clear_fields)
+
+        self.about_ACTION.triggered.connect(self.about)
+        self.checkupdates_ACTION.triggered.connect(self.check_updates)
+
+    def about(self):
+        QtWidgets.QMessageBox.information(
+            self,
+            f"Excel Generator {CURRENT_VERSION}",
+            "This tool was created using Pyside2 & QTDesigner\nCreated by: Nayam Chowdhury\nGithub: https://github.com/NCHlab/excel_generator",
+        )
+
+    def check_updates(self):
+
+        try:
+            r = requests.get(url="https://api.nayamc.com/excel_generator/version")
+            new_version = r.json()["version"]
+            is_latest = version.parse(CURRENT_VERSION) >= version.parse(new_version)
+
+        except:
+            QtWidgets.QMessageBox.information(
+                self, "Error", "Unable to query server for update"
+            )
+            return
+
+        if not is_latest:
+            openfilepath = QtWidgets.QMessageBox.question(
+                self,
+                "Update Available",
+                f"An Update is available to version: {new_version}\nWould you like to open link to the download page?",
+            )
+
+            if openfilepath == (QtWidgets.QMessageBox.Yes):
+                webbrowser.open("https://github.com/NCHlab/excel_generator/releases")
+        else:
+            QtWidgets.QMessageBox.information(
+                self, "No Update Required", "An Update is not required."
+            )
 
     def setup_icon(self):
         app_icon = QtGui.QIcon()
